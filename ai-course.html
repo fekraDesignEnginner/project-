@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كورس الذكاء الاصطناعي</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        }
+
+        section {
+            border: 3px solid rgba(210, 39, 133, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #d22785;
+            font-size: 2.5rem;
+            animation: glow 1.5s infinite;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #d22785, #f45c84);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(210, 39, 133, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(210, 39, 133, 0.6);
+        }
+
+        button:active {
+            transform: translateY(2px);
+            box-shadow: 0 3px 10px rgba(210, 39, 133, 0.3);
+        }
+
+        .video-container {
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid rgba(210, 39, 133, 0.8);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            width: 90%;
+            max-width: 800px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        iframe {
+            margin-top: 15px;
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        iframe:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 8px #d22785, 0 0 16px #d22785;
+            }
+            50% {
+                text-shadow: 0 0 20px #f45c84, 0 0 30px #f45c84;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>كورس الذكاء الاصطناعي</h1>
+    </section>
+
+    <!-- زر الرجوع -->
+    <button onclick="goBackToCourses()">رجوع إلى الكورسات المتاحة</button>
+
+    <!-- فيديوهات كورس الذكاء الاصطناعي -->
+    <div class="video-container">
+        <h2>الفيديو الأول</h2>
+        <button onclick="playVideo('ai-video1')">شغل الفيديو</button>
+        <div id="ai-video1" style="display:none;">
+            <iframe width="671" height="378" src="https://www.youtube.com/embed/U089xI_NDAM" title="Section 3 وايت بورد وكانفا وذكاء اصطناعي" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الثاني</h2>
+        <button onclick="playVideo('ai-video2')">شغل الفيديو</button>
+        <div id="ai-video2" style="display:none;">
+            <iframe width="672" height="378" src="https://www.youtube.com/embed/cTEEE9gc3iM" title="Section وايت بورد و مونتاج وذكاء اصطناعي" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الثالث</h2>
+        <button onclick="alert('سيتوفر قريبًا')">شغل الفيديو</button>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الرابع</h2>
+        <button onclick="alert('سيتوفر قريبًا')">شغل الفيديو</button>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الخامس</h2>
+        <button onclick="alert('سيتوفر قريبًا')">شغل الفيديو</button>
+    </div>
+
+    <script>
+        function playVideo(videoId) {
+            const videos = document.querySelectorAll('div[id^="ai-video"]');
+            videos.forEach(video => video.style.display = 'none');
+            document.getElementById(videoId).style.display = 'block';
+        }
+
+        function goBackToCourses() {
+            window.location.href = 'courses.html';
+        }
+    </script>
+</body>
+</html>

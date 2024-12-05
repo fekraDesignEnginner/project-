@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فكرة ديزاين</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- عنوان الموقع -->
+<header>
+    <h1 class="site-title">فكرة ديزاين</h1>
+</header>
+
+<style>
+    /* تصميم العنوان */
+    .site-title {
+        font-family: 'Arial', sans-serif;
+        font-size: 4rem; /* حجم النص */
+        color: rgb(210, 39, 133); /* اللون الرئيسي */
+        text-align: center; /* محاذاة النص في المنتصف */
+        padding: 20px;
+        border-radius: 50px; /* حواف مستديرة */
+        background: #fff; /* خلفية بيضاء */
+        box-shadow: 0 0 20px rgb(210, 39, 133); /* تأثير الضوء المتوهج */
+        text-shadow: 2px 2px 8px rgb(94, 157, 205); /* تأثير الظل حول النص */
+        transition: all 0.5s ease-in-out; /* تأثير الانتقال عند التمرير */
+        margin-top: 50px; /* مساحة أعلى العنوان */
+    }
+
+    /* عند التمرير على العنوان */
+    .site-title:hover {
+        background: rgb(210, 39, 133); /* تغيير الخلفية عند التمرير */
+        color: white; /* تغيير اللون إلى الأبيض */
+        box-shadow: 0 0 60px rgb(210, 39, 133); /* زيادة التوهج */
+        transform: scale(1.0); /* تكبير العنوان عند التمرير */
+        text-shadow: 4px 4px 12px rgb(210, 39, 133); /* زيادة تأثير الظل */
+    }
+</style>
+
+
+    <!-- قسم تسجيل الدخول -->
+    <section id="login">
+        <h2>تسجيل الدخول</h2>
+        <form onsubmit="validateLogin(event)">
+            <label for="username">اسم المستخدم:</label>
+            <input type="text" id="username" required>
+            <br>
+            <label for="password">كلمة المرور:</label>
+            <input type="password" id="password" required>
+            <br>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+    </section>
+
+    <!-- قسم الكورسات -->
+    <section id="courses" style="display: none;">
+        <h2>الكورسات المتاحة</h2>
+
+        <!-- إضافة الكورسات -->
+        <div class="course" id="ai-course">
+            <h3>الذكاء الاصطناعي</h3>
+            <input type="password" id="ai-password" placeholder="أدخل كلمة المرور">
+            <button onclick="enrollToAICourse()">سجل الآن</button>
+            <div id="ai-video" style="display: none;">
+                <ul>
+                    <li>
+                        <h3>الفيديو الأول</h3>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/tndkAf5BVYY" 
+                                title="Section 1 || وايت بورد" 
+                                allowfullscreen></iframe>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>الفيديو الثاني</h3>
+                        <div class="video-container">
+                            <iframe src="https://geo.dailymotion.com/player.html?video=x8ifn0u" 
+                                title="Dailymotion Video Player" 
+                                allowfullscreen></iframe>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="course" id="photoshop-course">
+            <h3>الفوتوشوب</h3>
+            <input type="password" id="photoshop-password" placeholder="أدخل كلمة المرور">
+            <button onclick="openPhotoshopCourse()">سجل الآن</button>
+        </div>
+
+        <div class="course" id="canva-course">
+            <h3>كانفا</h3>
+            <input type="password" id="canva-password" placeholder="أدخل كلمة المرور">
+            <button onclick="openCanvaCourse()">سجل الآن</button>
+        </div>
+
+        <div class="course" id="editing-course">
+            <h3>المونتاج</h3>
+            <input type="password" id="editing-password" placeholder="أدخل كلمة المرور">
+            <button onclick="openEditingCourse()">سجل الآن</button>
+        </div>
+
+        <div class="course" id="whiteboard-course">
+            <h3>الوايت بورد</h3>
+            <input type="password" id="whiteboard-password" placeholder="أدخل كلمة المرور">
+            <button onclick="openWhiteboardCourse()">سجل الآن</button>
+        </div>
+
+        <div class="course" id="voiceover-course">
+            <h3>الفويس أوفر</h3>
+            <input type="password" id="voiceover-password" placeholder="أدخل كلمة المرور">
+            <button onclick="openVoiceoverCourse()">سجل الآن</button>
+        </div>
+    </section>
+
+    <!-- قائمة الكورسات المسجلة
+    <section id="enrolled-courses">
+        <<h2 >الكورسات المسجلة</h2> -->
+<!-- 
+        <ul id="enrolled-list"></ul> -->
+    </section> 
+    <!-- قسم الحقوق والتواصل -->
+    <!-- قسم الحقوق والتواصل -->
+<footer>
+    <!-- حقوق النشر -->
+   
+
+    <!-- دعم فني واتصل بنا -->
+    <section id="contact">
+        <h3 class="contact-title"> للتواصل والدعم الفني </h3>
+        <p class="contact-text">إذا كان لديك أي استفسار أو مشكلة، لا تتردد في التواصل معنا عبر الواتساب  :</p>
+        <ul class="contact-list">
+            <li>
+                <a href="https://wa.me/201222752276" target="_blank" class="whatsapp-contact">
+                    <i class="fab fa-whatsapp"></i> بشمهندس ميدو شلبي - 01222752276
+                </a>
+            </li>
+            <li>
+                <a href="https://wa.me/2001157875635?text=" target="_blank" class="whatsapp-contact">
+                    <i class="fab fa-whatsapp"></i> بشمهندس محمد أحمد - 01157875635
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section id="copyright">
+        <p>&copy; 2024 فكرة ديزاين. جميع الحقوق محفوظة.</p>
+    </section>
+    <style>
+        /* تصميم العنوان */
+        .contact-title {
+            font-family: 'Arial', sans-serif;
+            font-size: 2rem;
+            color: rgb(39, 133, 210);
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(39, 133, 210, 0.6);
+            margin-bottom: 10px;
+        }
+    
+        /* تصميم النص */
+        .contact-text {
+            font-size: 1.2rem;
+            color: #555;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        /* تصميم القائمة */
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .contact-list li {
+            margin: 10px 0;
+        }
+    
+        /* تصميم الروابط */
+        .whatsapp-contact {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: white;
+            background-color: rgb(37, 211, 102);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(37, 211, 102, 0.6);
+            transition: all 0.3s ease-in-out;
+        }
+    
+        .whatsapp-contact:hover {
+            background-color: rgb(32, 185, 90);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 1);
+            transform: scale(1.05);
+        }
+    
+        /* أيقونات الواتساب */
+        .whatsapp-contact i {
+            margin-right: 8px;
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+    </style>
+    
+</footer>
+</body>
+</html>

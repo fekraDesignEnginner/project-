@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كورس الوايت بورد</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        section {
+            border: 2px solid rgb(210, 39, 133);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            background-color: #fff;
+        }
+        h1, h2 {
+            color: rgb(210, 39, 133);
+        }
+        button {
+            padding: 10px 20px;
+            background-color: rgb(210, 39, 133);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: rgb(170, 30, 100);
+        }
+        .video-container {
+            margin: 10px 0;
+        }
+        iframe {
+            display: none;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>كورس الوايت بورد</h1>
+    </header>
+
+    <!-- زر الرجوع -->
+    <button onclick="goBackToCourses()">رجوع إلى الكورسات المتاحة</button>
+
+    <!-- قسم الشرح -->
+    <section>
+        <h2>فيديوهات الشرح (35 فيديو)</h2>
+        <div class="video-container">
+            <h3>الفيديو الأول</h3>
+            <button onclick="playVideo('video1')">شغل الفيديو الأول</button>
+            <iframe id="video1" width="691" height="378" src="https://www.youtube.com/embed/DKI1u8oL2Ns" frameborder="0" allowfullscreen></iframe>
+
+            <h3>الفيديو الثاني</h3>
+            <button onclick="playVideo('video2')">شغل الفيديو الثاني</button>
+            <iframe id="video2" width="672" height="378" src="https://www.youtube.com/embed/GiDvmoumXN0" frameborder="0" allowfullscreen></iframe>
+
+            <h3>الفيديو الثالث</h3>
+            <button onclick="playVideo('video3')">شغل الفيديو الثالث</button>
+            <iframe id="video3" width="672" height="378" src="https://www.youtube.com/embed/tKBo650Zsts" frameborder="0" allowfullscreen></iframe>
+
+            <h3>الفيديو الرابع</h3>
+            <button onclick="playVideo('video4')">شغل الفيديو الرابع</button>
+            <iframe id="video4" width="672" height="378" src="https://www.youtube.com/embed/TaVe5jLc3w4" frameborder="0" allowfullscreen></iframe>
+
+            <h3>الفيديو الخامس</h3>
+            <button onclick="playVideo('video5')">شغل الفيديو الخامس</button>
+            <iframe id="video5" width="672" height="378" src="https://www.youtube.com/embed/iIJbw1EMQ6Y" frameborder="0" allowfullscreen></iframe>
+
+            <h3>الفيديو السادس</h3>
+            <button onclick="alert('سيتم التنزيل قريبًا')">شغل الفيديو السادس</button>
+        </div>
+    </section>
+
+    <!-- قسم السيشن -->
+    <section>
+        <h2>سيشن العملي (5 سيشنات)</h2>
+        <div class="video-container">
+            <h3>سيشن 1</h3>
+            <button onclick="playVideo('session1')">شغل السيشن الأول</button>
+            <iframe id="session1" width="671" height="378" src="https://www.youtube.com/embed/tndkAf5BVYY" frameborder="0" allowfullscreen></iframe>
+
+            <h3>سيشن 2</h3>
+            <button onclick="playVideo('session2')">شغل السيشن الثاني</button>
+            <iframe id="session2" width="671" height="378" src="https://www.youtube.com/embed/g4vJJ41QrdE" frameborder="0" allowfullscreen></iframe>
+
+            <h3>سيشن 3</h3>
+            <button onclick="playVideo('session3')">شغل السيشن الثالث</button>
+            <iframe id="session3" width="671" height="378" src="https://www.youtube.com/embed/U089xI_NDAM" frameborder="0" allowfullscreen></iframe>
+
+            <h3>سيشن 4</h3>
+            <button onclick="playVideo('session4')">شغل السيشن الرابع</button>
+            <iframe id="session4" width="671" height="378" src="https://www.youtube.com/embed/XqNIuxe4n2U" frameborder="0" allowfullscreen></iframe>
+
+            <h3>سيشن 5</h3>
+            <button onclick="playVideo('session5')">شغل السيشن الخامس</button>
+            <iframe id="session5" width="672" height="378" src="https://www.youtube.com/embed/cTEEE9gc3iM" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <script>
+        let lastPlayedVideo = null; // لتخزين الفيديو الذي كان يعمل
+
+        function playVideo(videoId) {
+            // إذا كان هناك فيديو مفتوح، قم بإخفائه
+            if (lastPlayedVideo && lastPlayedVideo !== videoId) {
+                document.getElementById(lastPlayedVideo).style.display = 'none';
+            }
+
+            // عرض الفيديو الحالي
+            const currentVideo = document.getElementById(videoId);
+            currentVideo.style.display = 'block';
+
+            // تحديث آخر فيديو مفتوح
+            lastPlayedVideo = videoId;
+        }
+
+        function goBackToCourses() {
+            window.location.href = 'courses.html';
+        }
+    </script>
+</body>
+</html>

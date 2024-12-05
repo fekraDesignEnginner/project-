@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كورس الفوتوشوب</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* نفس التنسيق مع تخصيص للفوتوشوب */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .video-container {
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid rgb(210, 39, 133);
+            border-radius: 20px;
+            background-color: white;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        section {
+            border: 2px solid rgb(210, 39, 133);
+            border-radius: 60px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 50%;
+            max-width: 500px;
+        }
+
+        h1 {
+            color: rgb(210, 39, 133);
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: rgb(210, 39, 133);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(180, 30, 120);
+        }
+
+        /* تنسيق الإشعار الذي يظهر في الأعلى */
+        .notification {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgb(210, 39, 133);
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            z-index: 1000;
+            display: none; /* الإشعار مخفي في البداية */
+        }
+
+        /* تنسيق الفيديوهات */
+        .video-message {
+            margin-top: 10px;
+            font-size: 18px;
+            color: rgb(210, 39, 133);
+        }
+
+        .additional-message {
+            font-size: 20px;
+            color: #ff4500;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>كورس الفوتوشوب</h1>
+    </section>
+
+    <button onclick="goBackToCourses()">رجوع إلى الكورسات المتاحة</button>
+
+    <!-- فيديوهات كورس الفوتوشوب -->
+    <div class="video-container">
+        <h2>الفيديو الأول</h2>
+        <button onclick="showMessage('photoshop-video1')">شغل الفيديو</button>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الثاني</h2>
+        <button onclick="showMessage('photoshop-video2')">شغل الفيديو</button>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الثالث</h2>
+        <button onclick="showMessage('photoshop-video3')">شغل الفيديو</button>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الرابع</h2>
+        <button onclick="showMessage('photoshop-video4')">شغل الفيديو</button>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الخامس</h2>
+        <button onclick="showMessage('photoshop-video5')">شغل الفيديو</button>
+    </div>
+
+    <!-- إشعار سيتم إضافته قريباً -->
+    <div id="notification" class="notification">
+        سيتم إضافة الفيديو قريباً!
+    </div>
+
+    <script>
+        let lastPlayedVideo = null; // متغير لتخزين الفيديو الذي تم تشغيله
+
+        // دالة لعرض الرسالة عند الضغط على الزر
+        function showMessage(videoId) {
+            // إظهار الإشعار في الأعلى
+            let notification = document.getElementById("notification");
+            notification.style.display = "block";
+
+            // إخفاء الإشعار بعد 3 ثواني
+            setTimeout(function() {
+                notification.style.display = "none";
+            }, 3000); // يختفي بعد 3 ثواني
+
+            // إخفاء الفيديو الذي كان مفتوحًا سابقًا
+            if (lastPlayedVideo && lastPlayedVideo !== videoId) {
+                document.getElementById(lastPlayedVideo).style.display = 'none';
+            }
+
+            // عرض الرسالة "سيتم الإضافة قريباً"
+            let videoContainer = document.getElementById(videoId);
+            videoContainer.style.display = 'block';
+
+            // تحديث الفيديو الذي تم تشغيله
+            lastPlayedVideo = videoId;
+        }
+
+        // دالة الرجوع إلى الكورسات المتاحة
+        function goBackToCourses() {
+            window.location.href = 'courses.html'; // قم بتغيير هذا الرابط حسب الحاجة
+        }
+    </script>
+</body>
+</html>

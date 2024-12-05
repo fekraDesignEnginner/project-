@@ -1,0 +1,277 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  
+}
+
+header {
+  background: #faf6f8;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Section Styles */
+section {
+  padding: 20px;
+  margin: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Course Card Styles */
+.course {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px 0;
+  transition: transform 0.2s;
+}
+
+.course:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+button {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #218838;
+}
+
+/* Form Styles */
+form {
+  margin-top: 20px;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* إعدادات الجسم */
+body {
+  background: linear-gradient(135deg, #FFB6C1, #FF77A9); /* تدرج لوني ناعم بين الوردي الفاتح والزهري */
+  font-family: 'Cairo', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ترويسة الصفحة */
+h1 {
+  color: #FF6F61;
+  font-size: 3rem;
+  margin: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 1s ease-out;
+}
+
+/* الحاويات الخاصة بالفيديو */
+.video-container {
+  background: #fff;
+  border: 2px solid #FF77A9;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  padding: 30px;
+  max-width: 650px;
+  text-align: center;
+  animation: zoomIn 0.5s ease-out;
+}
+
+/* عناوين الفيديو */
+h2 {
+  color: #FF6F61;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+h3 {
+  
+  color: #ef005f;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  animation: fadeInUp 1s ease-out;
+  animation: zoomIn 0.5s ease-out;
+  animation: slideIn 0.5s ease-out;
+
+  /* تحديد التأثيرات التي سيتم تطبيقها على عنصر معين */
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+} 
+
+
+
+/* الأزرار */
+button {
+  background: linear-gradient(90deg, #FF6F61, #FF77A9);
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+/* تأثيرات الفيديو */
+iframe {
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  margin-top: 20px;
+}
+
+/* تأثيرات الأنيميشن */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* تنسيق الفوتر */
+footer {
+  background-color: #FF77A9;
+  padding: 20px;
+  color: #000000;
+  text-align: center;
+  margin-top: 50px;
+  border-top: 2px solid #FF6F61;
+}
+
+footer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+footer a {
+  color: #040404;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+/* إضافة أيقونة واتساب مع تأثير */
+footer a i {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* عند المرور على الأيقونة أو الرابط */
+footer a:hover {
+  color: #25D366; /* اللون المميز لواتساب */
+  transform: scale(1.1); /* تكبير الأيقونة عند المرور */
+}
+
+footer a i:hover {
+  transform: rotate(15deg); /* دوران الأيقونة عند المرور */
+}
+
+/* تنسيق قائمة الواتساب */
+#contact ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#contact li {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+/* تخصيص مظهر الواتساب عند الضغط عليها */
+footer a:active {
+  transform: scale(1.05);
+}
+

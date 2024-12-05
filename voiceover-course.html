@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كورس الفويس أوفر</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        section {
+            border: 2px solid rgb(210, 39, 133);
+            border-radius: 60px;
+            padding: 40px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+        }
+
+        h1 {
+            color: rgb(210, 39, 133);
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: rgb(210, 39, 133);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        button:hover {
+            background-color: rgb(180, 30, 120);
+        }
+
+        .video-container {
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid rgb(210, 39, 133);
+            border-radius: 20px;
+            background-color: white;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        iframe {
+            margin-top: 10px;
+            display: block;
+            border-radius: 10px;
+        }
+
+        /* تعديل حجم الفيديو الأول */
+        #voiceover-video1 iframe {
+            width: 800px;
+            height: 450px;
+        }
+
+        /* تعديل حجم الفيديوهات الأخرى */
+        .video-container:not(:first-child) iframe {
+            width: 560px;
+            height: 315px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>كورس الفويس أوفر</h1>
+    </section>
+    
+    <!-- زر الرجوع -->
+    <button onclick="goBackToCourses()">رجوع إلى الكورسات المتاحة</button>
+
+    <!-- فيديوهات -->
+    <div class="video-container">
+        <h2>الفيديو الأول</h2>
+        <button onclick="playVideo('voiceover-video1')">شغل الفيديو</button>
+        <div id="voiceover-video1" style="display:none;">
+            <iframe src="https://www.youtube.com/embed/your_video_1" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الثاني</h2>
+        <button onclick="playVideo('voiceover-video2')">شغل الفيديو</button>
+        <div id="voiceover-video2" style="display:none;">
+            <iframe src="https://www.youtube.com/embed/your_video_2" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الثالث</h2>
+        <button onclick="playVideo('voiceover-video3')">شغل الفيديو</button>
+        <div id="voiceover-video3" style="display:none;">
+            <iframe src="https://www.youtube.com/embed/your_video_3" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الرابع</h2>
+        <button onclick="playVideo('voiceover-video4')">شغل الفيديو</button>
+        <div id="voiceover-video4" style="display:none;">
+            <iframe src="https://www.youtube.com/embed/your_video_4" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الخامس</h2>
+        <button onclick="playVideo('voiceover-video5')">شغل الفيديو</button>
+        <div id="voiceover-video5" style="display:none;">
+            <iframe src="https://www.youtube.com/embed/your_video_5" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        let lastPlayedVideo = null; // متغير لتخزين الفيديو الذي تم تشغيله
+
+        // دالة تشغيل الفيديو
+        function playVideo(videoId) {
+            // إخفاء الفيديو الذي كان مفتوحًا سابقًا
+            if (lastPlayedVideo && lastPlayedVideo !== videoId) {
+                document.getElementById(lastPlayedVideo).style.display = 'none';
+            }
+
+            // عرض الفيديو المطلوب فقط
+            document.getElementById(videoId).style.display = 'block';
+
+            // تحديث الفيديو الذي تم تشغيله
+            lastPlayedVideo = videoId;
+        }
+
+        // دالة الرجوع إلى الكورسات المتاحة
+        function goBackToCourses() {
+            window.location.href = 'courses.html'; // قم بتغيير "courses.html" إذا كان اسم الملف مختلفًا.
+        }
+    </script>
+</body>
+</html>

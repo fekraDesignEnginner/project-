@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كورس كانفا</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .video-container {
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid rgb(210, 39, 133);
+            border-radius: 20px;
+            background-color: white;
+            width: 80%;
+            max-width: 800px;
+        }
+        section {
+            border: 2px solid rgb(210, 39, 133);
+            border-radius: 60px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 50%;
+            max-width: 500px;
+        }
+        h1 {
+            color: rgb(210, 39, 133);
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: rgb(210, 39, 133);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(180, 30, 120);
+        }
+        iframe {
+            margin-top: 10px;
+            display: block;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>كورس كانفا</h1>
+    </section>
+    
+    <!-- زر الرجوع -->
+    <button onclick="goBackToCourses()">رجوع إلى الكورسات المتاحة</button>
+
+    <!-- فيديوهات كورس كانفا -->
+    <div class="video-container">
+        <h2>الفيديو الأول</h2>
+        <button onclick="playVideo('canva-video1')">شغل الفيديو</button>
+        <div id="canva-video1" style="display:none;">
+            <iframe width="671" height="378" src="https://www.youtube.com/embed/U089xI_NDAM" title="Section 3 وايت بورد وكانفا وذكاء اصطناعي" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الثاني</h2>
+        <button onclick="playVideo('canva-video2')">شغل الفيديو</button>
+        <div id="canva-video2" style="display:none;">
+            <iframe width="671" height="378" src="https://www.youtube.com/embed/XqNIuxe4n2U" title="Section 4 موشن وايت بورد" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الثالث</h2>
+        <button onclick="alert('سيتوفر قريبًا')">شغل الفيديو</button>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الرابع</h2>
+        <button onclick="alert('سيتوفر قريبًا')">شغل الفيديو</button>
+    </div>
+
+    <div class="video-container">
+        <h2>الفيديو الخامس</h2>
+        <button onclick="alert('سيتوفر قريبًا')">شغل الفيديو</button>
+    </div>
+
+    <script>
+        // دالة تشغيل الفيديو
+        function playVideo(videoId) {
+            // إخفاء كل الفيديوهات
+            const videos = document.querySelectorAll('div[id^="canva-video"]');
+            videos.forEach(video => video.style.display = 'none');
+            
+            // عرض الفيديو المطلوب فقط
+            document.getElementById(videoId).style.display = 'block';
+        }
+
+        // دالة الرجوع إلى الكورسات المتاحة
+        function goBackToCourses() {
+            window.location.href = 'courses.html'; // قم بتغيير "courses.html" إذا كان اسم الملف مختلفًا.
+        }
+    </script>
+</body>
+</html>
